@@ -1,8 +1,16 @@
 :root {
   line-height: 1.5;
   font-weight: 400;
+  letter-spacing: 0.5px;
   --background-color: #f0f0f0;
-  --primary-color: #ff0000;
-  --btn-transition: border-color 0.3s ease-out, color 0.3s ease-out,
-    background-color 0.3s ease-out;
+  --secondary-color: #ff0000;
+  --green-color: #10aa10;
+  --font-color: #000000;
+  --contrast-color: #ffffff;
+}
+
+html[theme='dark'] {
+  --background-color: #0f0f0f;
+  --font-color: #ffffff;
+  --contrast-color: #000000;
 }
