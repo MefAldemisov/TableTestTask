@@ -24,7 +24,7 @@ export const router = createRouter({
   routes,
 })
 
-router.afterEach((to) => {
+router.afterEach(to => {
   nextTick(() => {
     document.title = to.name as string
   })

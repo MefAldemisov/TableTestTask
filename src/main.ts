@@ -1,9 +1,12 @@
-import { createApp } from 'vue'
 import '@/assets/styles/reset.css'
 import '@/assets/styles/main.css'
-import App from './App.vue'
+
 import { createPinia } from 'pinia'
+import { createApp } from 'vue'
+
 import { router } from '@/router/index'
+
+import App from './App.vue'
 
 const pinia = createPinia()
 

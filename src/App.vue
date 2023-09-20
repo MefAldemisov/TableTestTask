@@ -23,7 +23,7 @@ const appHeight = () => {
   doc.style.setProperty('--app-height', `${window.innerHeight}px`)
 }
 
-onMounted(async () => {
+onMounted(() => {
   window.addEventListener('resize', appHeight)
   appHeight()
 })
