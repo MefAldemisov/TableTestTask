@@ -40,6 +40,6 @@ onUnmounted(() => {
 }
 
 body {
-  background-color: #f5f5ef;
+  background-color: var(--background-color);
 }
 </style>
