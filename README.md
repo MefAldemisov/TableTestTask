@@ -5,7 +5,7 @@
 ### Base tasks
 
 - [x] setup repo (base): vue, vite, ts, vue-router, pinia
-- [ ] setup repo (optional): eslint, prettier + github actions
+- [x] setup repo (optional): eslint, prettier + github actions
 
 ### Components
 
