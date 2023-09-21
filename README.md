@@ -12,7 +12,7 @@
 - [x] button
 - [x] popup (may be reused for alerts potentially in the project)
 - [x] confirm popup (required)
-- [ ] input (number)
+- [x] input (number)
 - [ ] table
 
 ### Pages
