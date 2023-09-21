@@ -5,7 +5,6 @@
     <footer>
       <AppButton
         :btn-type="ButtonType.Error"
-        formmethod="dialog"
         type="submit"
       >
         {{ cancelText }}
