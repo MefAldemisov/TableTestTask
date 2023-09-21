@@ -27,7 +27,7 @@ import Close from '@/assets/icons/close.svg'
 
 import AppButton from './AppButton.vue'
 
-const dialogRef = ref<HTMLDialogElement | null>(null)
+const dialogRef = ref<HTMLDialogElement | undefined>()
 
 defineExpose({
   showModal: () => dialogRef.value?.showModal(),
