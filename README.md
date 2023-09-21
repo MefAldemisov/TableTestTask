@@ -9,9 +9,9 @@
 
 ### Components
 
-- [ ] button
-- [ ] popup
-- [ ] confirm popup
+- [x] button
+- [x] popup (may be reused for alerts potentially in the project)
+- [x] confirm popup (required)
 - [ ] input (number)
 - [ ] table
 

@@ -1,5 +1,6 @@
 <template>
   <button
+    formmethod="dialog"
     type="button"
     :class="btnType"
   >
@@ -41,12 +42,12 @@ button {
     background-color 0.3s ease-out;
   padding: 0.8rem;
 
-  color: var(--btn-color);
+  color: var(--btn-color, var(--font-color));
   background-color: var(--contrast-color);
 }
 
 button:hover {
   color: var(--contrast-color);
-  background-color: var(--btn-color);
+  background-color: var(--btn-color, var(--font-color));
 }
 </style>
