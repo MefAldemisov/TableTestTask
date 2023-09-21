@@ -1,22 +1,48 @@
 <template>
   <h1>Table</h1>
-  <AppConfirm ref="confirmRef">Are you sure?</AppConfirm>
-  <AppButton
-    :btn-type="ButtonType.Success"
-    @click="open"
-  >
-    Click me
-  </AppButton>
+  <AppTable
+    :columns="columns"
+    :data="data"
+  />
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import { h } from 'vue'
 
 import AppButton from '@/components/AppButton.vue'
-import AppConfirm from '@/components/AppConfirm.vue'
-import { ButtonType } from '@/types'
+import AppTable from '@/components/AppTable.vue'
+import { ButtonType, TableColumn } from '@/types'
 
-const confirmRef = ref<InstanceType<typeof AppConfirm> | undefined>()
-const open = () => {
-  confirmRef.value?.showModal()
+interface ValueType {
+  id: number
+  value: number
 }
+
+const data: ValueType[] = [
+  { id: 0, value: 5 },
+  { id: 1, value: 16 },
+]
+
+const columns: TableColumn<ValueType>[] = [
+  {
+    id: 0,
+    title: 'Индекс',
+    render: (row: ValueType) => h('div', {}, row.id),
+  },
+  {
+    id: 1,
+    title: 'Значение',
+    render: (row: ValueType) => h('div', {}, row.value),
+  },
+  {
+    id: 2,
+    title: '',
+    render: () =>
+      h(AppButton, { btnType: ButtonType.Success }, 'Редактировать'),
+  },
+  {
+    id: 3,
+    title: '',
+    render: () => h(AppButton, { btnType: ButtonType.Error }, 'Удалить'),
+  },
+]
 </script>
