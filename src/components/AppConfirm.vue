@@ -41,7 +41,7 @@ const emit = defineEmits<{
   (e: 'confirm'): void
 }>()
 
-const dialogRef = ref<HTMLDialogElement | undefined>()
+const dialogRef = ref<InstanceType<typeof AppPopup> | undefined>()
 
 const confirm = () => {
   dialogRef.value?.close()
