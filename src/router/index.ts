@@ -8,6 +8,11 @@ const routes: RouteRecordRaw[] = [
     name: 'Main table',
   },
   {
+    path: '/value/create',
+    component: () => import('@/views/ValueForm.vue'),
+    name: 'Value Form',
+  },
+  {
     path: '/value/:id',
     component: () => import('@/views/ValueForm.vue'),
     name: 'Value Form',
