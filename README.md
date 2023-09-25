@@ -13,12 +13,12 @@
 - [x] popup (may be reused for alerts potentially in the project)
 - [x] confirm popup (required)
 - [x] input (number)
-- [ ] table
+- [x] table
 
 ### Pages
 
 - [ ] table
-- [ ] form
+- [x] form
 
 ## Interesting places for reviewer
 

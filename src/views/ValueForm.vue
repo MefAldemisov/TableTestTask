@@ -1,6 +1,6 @@
 <template>
   <form ref="valueForm">
-    <h1>Форма {{ isCreateForm ? 'создания' : 'редактирования' }}</h1>
+    <h1>Форма {{ isCreateForm ? 'создания' : 'редактирования' }} значения</h1>
     <AppConfirm
       ref="confirmDeleteRef"
       confirm-text="Удалить"
