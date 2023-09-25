@@ -9,6 +9,7 @@ export interface Value {
 export const useValues = defineStore('values', () => {
   const values = ref<Value[]>(JSON.parse(localStorage.getItem('array') ?? '[]'))
 
+  // save array to local storage
   watch(
     values,
     newValue => {
@@ -17,6 +18,7 @@ export const useValues = defineStore('values', () => {
     { deep: true },
   )
 
+  // new id = maxId + 1
   const currentIndex = computed(
     () => Math.max(0, ...values.value.map(value => value.id)) + 1,
   )
