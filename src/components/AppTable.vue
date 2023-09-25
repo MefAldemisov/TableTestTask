@@ -19,7 +19,7 @@
           v-for="column in columns"
           :key="column.id"
         >
-          <AppInsertH :render="column.render(row)" />
+          <AppInsertH :render="() => column.render(row)" />
         </td>
       </tr>
     </tbody>
@@ -28,7 +28,7 @@
 <script setup lang="ts" generic="T extends { id: string | number }">
 import { TableColumn } from '@/types'
 
-import AppInsertH from './AppInsertH.vue'
+import AppInsertH from './AppInsertH'
 
 defineProps<{
   columns: TableColumn<T>[]

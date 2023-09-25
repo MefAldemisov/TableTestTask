@@ -2,9 +2,17 @@
 <template>
   <div class="app flex flex-col">
     <header>
+      <router-link
+        to="/"
+        aria-label="Главная"
+      >
+        <Logo height="30" />
+      </router-link>
       <nav>
         <ul>
-          <router-link to="/"><li>Main page</li></router-link>
+          <router-link to="/">
+            <li>Главная</li>
+          </router-link>
         </ul>
       </nav>
     </header>
@@ -16,6 +24,8 @@
 </template>
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
+
+import Logo from '@/assets/icons/logo.svg'
 
 // set valid height in IOS
 const appHeight = () => {
@@ -33,7 +43,7 @@ onUnmounted(() => {
 })
 </script>
 <!-- eslint-disable-next-line vue-scoped-css/enforce-style-type -->
-<style lang="css">
+<style lang="css" scoped>
 .app {
   height: 100vh;
   height: var(--app-height);
@@ -41,5 +51,17 @@ onUnmounted(() => {
 
 body {
   background-color: var(--background-color);
+}
+
+header {
+  display: flex;
+  padding: 0.5rem;
+  gap: 2rem;
+  align-items: center;
+}
+
+header a {
+  color: currentColor;
+  text-decoration: none;
 }
 </style>
