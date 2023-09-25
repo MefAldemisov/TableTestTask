@@ -16,7 +16,7 @@
         </ul>
       </nav>
     </header>
-    <main class="flex-1 py-5 container mx-auto px-5 md:px-0">
+    <main>
       <!-- eslint-disable-next-line vue/no-undef-components -->
       <router-view />
     </main>
@@ -43,14 +43,21 @@ onUnmounted(() => {
 })
 </script>
 <!-- eslint-disable-next-line vue-scoped-css/enforce-style-type -->
-<style lang="css" scoped>
-.app {
-  height: 100vh;
-  height: var(--app-height);
+<style lang="css">
+h1 {
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 body {
   background-color: var(--background-color);
+  color: var(--font-color);
+}
+</style>
+<style lang="css" scoped>
+.app {
+  height: 100vh;
+  height: var(--app-height);
 }
 
 header {
@@ -60,8 +67,20 @@ header {
   align-items: center;
 }
 
+header svg {
+  fill: var(--font-color);
+}
+
 header a {
   color: currentColor;
   text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 1rem;
 }
 </style>

@@ -109,13 +109,6 @@ const deleteValue = () => {
 }
 </script>
 <style scoped>
-form {
-  padding: 1rem;
-}
-h1 {
-  font-size: 2rem;
-  margin: 1rem 0;
-}
 .buttons-list {
   margin-top: 2rem;
   display: flex;
