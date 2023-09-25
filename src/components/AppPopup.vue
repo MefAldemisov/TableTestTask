@@ -1,24 +1,26 @@
 <template>
-  <dialog ref="dialogRef">
-    <form method="dialog">
-      <header>
-        <p class="title"><slot name="title" /></p>
-        <AppButton
-          type="submit"
-          aria-label="Закрыть"
-          title="Закрыть"
-        >
-          <Close
-            width="14"
-            height="14"
-          />
-        </AppButton>
-      </header>
-      <main>
-        <slot />
-      </main>
-    </form>
-  </dialog>
+  <Teleport to="body">
+    <dialog ref="dialogRef">
+      <form method="dialog">
+        <header>
+          <p class="title"><slot name="title" /></p>
+          <AppButton
+            type="submit"
+            aria-label="Закрыть"
+            title="Закрыть"
+          >
+            <Close
+              width="14"
+              height="14"
+            />
+          </AppButton>
+        </header>
+        <main>
+          <slot />
+        </main>
+      </form>
+    </dialog>
+  </Teleport>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
@@ -36,7 +38,14 @@ defineExpose({
 </script>
 <style scoped>
 dialog {
+  color: var(--font-color);
   padding: 1rem;
+  background-color: var(--background-color);
+  border: 1px solid currentColor;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 main {
