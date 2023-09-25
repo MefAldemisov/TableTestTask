@@ -1,15 +1,27 @@
 <template>
-  <h1>Table</h1>
-  <AppTable
-    :columns="columns"
-    :data="data"
-  />
+  <div>
+    <h1>Table</h1>
+    <router-link to="/value/create">
+      <AppButton
+        :btn-type="ButtonType.Success"
+        type="button"
+      >
+        Создать
+      </AppButton>
+    </router-link>
+    <AppTable
+      :columns="columns"
+      :data="data"
+    />
+  </div>
 </template>
 <script setup lang="ts">
 import { h } from 'vue'
+import { RouterLink } from 'vue-router'
 
 import AppButton from '@/components/AppButton.vue'
 import AppTable from '@/components/AppTable.vue'
+import { useValues } from '@/store/values'
 import { ButtonType, TableColumn } from '@/types'
 
 interface ValueType {
@@ -17,10 +29,8 @@ interface ValueType {
   value: number
 }
 
-const data: ValueType[] = [
-  { id: 0, value: 5 },
-  { id: 1, value: 16 },
-]
+const store = useValues()
+const data: ValueType[] = store.values
 
 const columns: TableColumn<ValueType>[] = [
   {
@@ -36,8 +46,12 @@ const columns: TableColumn<ValueType>[] = [
   {
     id: 2,
     title: '',
-    render: () =>
-      h(AppButton, { btnType: ButtonType.Success }, 'Редактировать'),
+    render: row =>
+      h(
+        RouterLink,
+        { to: `value/${row.id}` },
+        h(AppButton, { btnType: ButtonType.Success }, 'Редактировать'),
+      ),
   },
   {
     id: 3,

@@ -5,9 +5,10 @@
       :id="id"
       type="number"
       :value="modelValue"
+      :defaultValue="defaultValue"
       @input="
         event =>
-          $emit('update:modelValue', (<HTMLInputElement>event.target).value)
+          $emit('update:modelValue', +(<HTMLInputElement>event.target).value)
       "
     />
   </div>
@@ -21,6 +22,7 @@ defineProps<{
   id: string
   modelValue: number
   label: string
+  defaultValue: number
 }>()
 
 defineEmits<{

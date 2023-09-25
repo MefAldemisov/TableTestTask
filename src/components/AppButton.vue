@@ -46,7 +46,11 @@ button {
   background-color: var(--contrast-color);
 }
 
-button:hover {
+button[disabled] {
+  opacity: 0.5;
+}
+
+button:hover:not([disabled]) {
   color: var(--contrast-color);
   background-color: var(--btn-color, var(--font-color));
 }
