@@ -1,24 +1,26 @@
 <template>
-  <dialog ref="dialogRef">
-    <form method="dialog">
-      <header>
-        <p class="title"><slot name="title" /></p>
-        <AppButton
-          type="submit"
-          aria-label="Закрыть"
-          title="Закрыть"
-        >
-          <Close
-            width="14"
-            height="14"
-          />
-        </AppButton>
-      </header>
-      <main>
-        <slot />
-      </main>
-    </form>
-  </dialog>
+  <Teleport to="body">
+    <dialog ref="dialogRef">
+      <form method="dialog">
+        <header>
+          <p class="title"><slot name="title" /></p>
+          <AppButton
+            type="submit"
+            aria-label="Закрыть"
+            title="Закрыть"
+          >
+            <Close
+              width="14"
+              height="14"
+            />
+          </AppButton>
+        </header>
+        <main>
+          <slot />
+        </main>
+      </form>
+    </dialog>
+  </Teleport>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
