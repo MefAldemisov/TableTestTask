@@ -1,5 +1,15 @@
 # Test Task Table
 
+## View
+
+### Table page
+
+![Table page](./media/table.png)
+
+### Form page
+
+![Form page](./media/form.png)
+
 ## TODO list:
 
 ### Base tasks
