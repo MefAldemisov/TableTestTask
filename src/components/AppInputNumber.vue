@@ -34,10 +34,13 @@ label {
   display: block;
   margin-bottom: 0.5rem;
 }
+
 input {
   display: block;
   padding: 0.8rem;
   border: 1px solid currentColor;
   border-radius: 0;
+  background: transparent;
+  color: currentColor;
 }
 </style>

@@ -17,7 +17,7 @@
 
 ### Pages
 
-- [ ] table
+- [x] table
 - [x] form
 
 ## Interesting places for reviewer
@@ -26,7 +26,7 @@
 
 I used native css in this project, because components are relatively small, therefore, most of the selectors are short. Also, native css, opposed to scss supports wonderful `currentColor` method, which was used to compute the color of the button's border
 
-Additionally, I used the css variables to support potential temization of the app.
+Additionally, I used the css variables to support potential themization of the app.
 
 ### Popups using native dialog element
 
@@ -42,3 +42,7 @@ defineExpose({
   close: () => dialogRef.value?.close(),
 })
 ```
+
+### Table cells via `h` function
+
+`AppInsertH` component is used to insert a cell into a table, while the cell itself is passed a a render-function

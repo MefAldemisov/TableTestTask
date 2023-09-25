@@ -36,7 +36,14 @@ defineExpose({
 </script>
 <style scoped>
 dialog {
+  color: var(--font-color);
   padding: 1rem;
+  background-color: var(--background-color);
+  border: 1px solid currentColor;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 main {
