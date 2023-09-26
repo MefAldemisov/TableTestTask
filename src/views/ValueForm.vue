@@ -91,7 +91,8 @@ onMounted(() => {
   }
 })
 
-const saveValue = () => {
+const saveValue = (event: MouseEvent) => {
+  event.preventDefault()
   if (isCreateForm.value) store.addNewValue(value.value)
   else store.updateValue(id.value as number, value.value)
   router.push('/')
