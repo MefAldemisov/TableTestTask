@@ -54,10 +54,8 @@ const columns: TableColumn<Value>[] = [
     id: 2,
     title: '',
     render: row =>
-      h(
-        RouterLink,
-        { to: `value/${row.id}` },
-        h(AppButton, { btnType: ButtonType.Success }, 'Редактировать'),
+      h(RouterLink, { to: `value/${row.id}` }, () =>
+        h(AppButton, { btnType: ButtonType.Success }, () => 'Редактировать'),
       ),
   },
   {
@@ -73,7 +71,7 @@ const columns: TableColumn<Value>[] = [
             confirmDeleteModalEvents.open()
           },
         },
-        'Удалить',
+        () => 'Удалить',
       ),
   },
 ]
