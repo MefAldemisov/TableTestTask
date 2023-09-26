@@ -1,5 +1,5 @@
 <template>
-  <form ref="valueForm">
+  <form>
     <h1>Форма {{ isCreateForm ? 'создания' : 'редактирования' }} значения</h1>
     <AppConfirm
       ref="confirmDeleteRef"
@@ -10,7 +10,7 @@
     </AppConfirm>
     <AppConfirm
       ref="confirmCancelRef"
-      confirm-text="Очистить форму"
+      confirm-text="Сбросить форму"
       @confirm="cancel"
     >
       Вы уверены, что хотите отменить изменения?
@@ -98,9 +98,8 @@ const saveValue = (event: MouseEvent) => {
   router.push('/')
 }
 
-const valueForm = ref<HTMLFormElement | undefined>()
 const cancel = () => {
-  valueForm.value?.reset()
+  value.value = defaultValue.value
 }
 
 const deleteValue = () => {
