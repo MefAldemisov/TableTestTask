@@ -10,14 +10,13 @@
 <script setup lang="ts">
 import { ButtonType } from '@/types'
 
-withDefaults(
-  defineProps<{
-    btnType?: ButtonType
-  }>(),
-  {
-    btnType: ButtonType.Default,
-  },
-)
+interface Props {
+  btnType?: ButtonType
+}
+
+withDefaults(defineProps<Props>(), {
+  btnType: ButtonType.Default,
+})
 </script>
 <style scoped>
 button.default {
